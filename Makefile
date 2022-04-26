@@ -10,7 +10,7 @@ help:
 .DEFAULT_GOAL := help
 
 venv:
-venv:  ## make virtual environment (active with  `source venv/Scripts/activate` on Windows)
+venv:  ## make virtual environment (activate with  `source venv/Scripts/activate` on Windows, deactivate with `deactivate`)
 	python3 -m venv venv
 
 onefolder:
