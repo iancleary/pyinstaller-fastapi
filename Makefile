@@ -1,5 +1,9 @@
 .PHONY: help
 
+name=Application
+version=0p1
+NAME=$(name)_$(version)
+
 help_padding=12
 
 help:
@@ -15,8 +19,8 @@ venv:  ## make virtual environment (activate with  `source venv/Scripts/activate
 
 onefolder:
 onefolder:  ## make pyinstaller exe within folder of dependencies
-	pyinstaller -y --clean --additional-hooks-dir extra-hooks main.py
+	pyinstaller -y --clean --name $(NAME) --additional-hooks-dir extra-hooks main.py
 
 onefile:
 onefile:  ## make pyinstaller exe bundling dependencies into one file
-	pyinstaller -y --clean --onefile --additional-hooks-dir extra-hooks main.py
+	pyinstaller -y --clean --name $(NAME) --onefile --additional-hooks-dir extra-hooks main.py
